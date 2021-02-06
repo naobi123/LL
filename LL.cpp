@@ -1,4 +1,6 @@
 // Single LL program by Roshni RK
+// Added a delete_from() module from LL_modified branch
+//Adding another comment from LL_modified branch
 #include<stdio.h>
 #include<stdlib.h>
 #include<malloc.h>
@@ -36,6 +38,7 @@ int main()
 		printf("8. Delete last node\n");
 		printf("9. Delete a node after a given value\n");
 		printf("10. Delete from a position\n");
+
 		printf("11. Exit\n");
 		printf("Enter choice\n");
 		scanf("%d", &choice);
@@ -241,6 +244,28 @@ struct node *delete_after(struct node *)
 	return (start);
 	
 }
+
+
+struct node *delete_FromPos(struct node *)
+{
+	struct node * ptr, *preptr;
+	int pos, i=1;
+	ptr=start;
+	printf("\n Enter position\n");
+	scanf("%d", &pos);
+	while (i<pos-1)
+	{
+		ptr=ptr->next;
+		i++;
+		
+	}
+	preptr=ptr->next;
+	ptr->next=preptr->next;
+	free(preptr);
+		printf("\t\n  node is deleted\n");
+		return (start);
+}
+
 
 
 

@@ -3,6 +3,7 @@
 #include<stdlib.h>
 #include<malloc.h>
 #include<conio.h>
+#include<string.h>
 struct node
 {
 	int data;
